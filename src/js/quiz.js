@@ -90,34 +90,34 @@ const questions = [
         ]
     },
 ]
-
+ 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
-
+ 
 let currentQuestionIndex = 0;
 let score = 0;
-
+ 
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Próxima";
     showQuestion();
 }
-
+ 
 function resetState() {
     nextButton.style.display = "none";
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
-
+ 
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
+ 
     currentQuestion.answers.forEach((answer) => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
@@ -127,11 +127,11 @@ function showQuestion() {
         answerButtons.appendChild(button);
     });
 }
-
+ 
 function selectAnswer(e) {
     answers = questions[currentQuestionIndex].answers;
     const correctAnswer = answers.filter((answer) => answer.correct == true)[0];
-
+ 
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.id == correctAnswer.id;
     if (isCorrect) {
@@ -145,14 +145,14 @@ function selectAnswer(e) {
     });
     nextButton.style.display = "block";
 }
-
+ 
 function showScore() {
     resetState();
-    questionElement.innerHTML = "Você acertou ${ score } de ${ questions.length } !";
+    questionElement.innerHTML = `Você acertou ${score} de ${questions.length}!`;
     nextButton.innerHTML = "Jogar Novamente";
     nextButton.style.display = "block";
 }
-
+ 
 function handleNextButton() {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
@@ -161,7 +161,7 @@ function handleNextButton() {
         showScore();
     }
 }
-
+ 
 nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < questions.length) {
         handleNextButton();
@@ -169,5 +169,5 @@ nextButton.addEventListener("click", () => {
         startQuiz();
     }
 })
-
+ 
 startQuiz();

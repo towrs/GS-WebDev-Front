@@ -1,16 +1,13 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* Corpo */
+ 
 body {
     background: #589A8D;
 }
-
-/* Cabeçalho */
+ 
 header {
     background: #589A8D;
     color: #345;
@@ -21,33 +18,31 @@ header {
     box-shadow: 5px 5px 5px #555;
     position: relative;
 }
-
+ 
 header .logo {
     font-size: 1.8em;
     font-weight: bold;
     color: #031231;
 }
-
-/* Menu */
+ 
 .menu {
     display: flex;
     gap: 20px;
 }
-
+ 
 .menu a {
     text-decoration: none;
     color: #031231;
     font-weight: 600;
     transition: color 0.3s;
 }
-
+ 
 .menu a:hover {
     color: rgb(94, 3, 94);
     text-decoration: underline;
     text-transform: uppercase;
 }
-
-/* Botão Hamburguer */
+ 
 .hamburger {
     display: none;
     flex-direction: column;
@@ -56,14 +51,13 @@ header .logo {
     height: 22px;
     cursor: pointer;
 }
-
+ 
 .hamburger div {
     height: 4px;
     background-color: #0B2559;
     border-radius: 5px;
 }
-
-/* Responsividade */
+ 
 @media (max-width: 768px) {
     .menu {
         display: none;
@@ -75,77 +69,70 @@ header .logo {
         width: 200px;
         padding: 15px;
         border-radius: 10px;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
         z-index: 1000;
     }
-
+ 
     .menu.active {
         display: flex;
     }
-
+ 
     .hamburger {
         display: flex;
     }
 }
-
-/* Banner */
+ 
 .banner #image {
     width: 100%;
     height: 100vh;
     object-fit: cover;
 }
-
-/* Rodapé */
+ 
 footer {
     background-color: #345;
     color: white;
     text-align: center;
     padding: 10px;
 }
-
-/* =========================
-   Área do QUIZ
-   ========================= */
-
-.app {
+ 
+ 
+ 
+ 
+ 
+/*QUIZ*/
+ 
+.app{
     background: #fff;
     width: 90%;
     max-width: 600px;
     margin: 100px auto 0;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-
-.app h1 {
-    font-size: 25px;
+.app h1{
+    font-weight: 25px;
     color: #001e4d;
     font-weight: 600;
     border-bottom: 1px solid #333;
-    padding-bottom: 20px;
-    text-align: center;
+    padding-bottom: 30px;
 }
-
-#container-quiz {
+ 
+#container-quiz{
     background: #001e4d;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
 }
-
-.quiz {
-    padding: 20px 0;
+.quiz{
+   padding: 20px 0;
 }
-
-.quiz h2 {
+.quiz h2{
     font-size: 18px;
     color: #001e4d;
     font-weight: 600;
-    margin-bottom: 10px;
 }
-
-.btn {
+.btn{
     background: #fff;
     color: #222;
     font-weight: 500;
@@ -158,34 +145,31 @@ footer {
     cursor: pointer;
     transition: all 0.3s;
 }
-
-.btn:hover:not([disabled]) {
+ 
+.btn:hover:not([disabled]){
     background: #222;
     color: #fff;
 }
-
-.btn:disabled {
+.btn:disabled{
     cursor: no-drop;
-    opacity: 0.6;
 }
-
-#next-btn {
+#next-btn{
     background: #001e4d;
     color: #fff;
     font-weight: 500;
     width: 150px;
-    border: none;
+    border: 0;
     padding: 10px;
     margin: 20px auto 0;
     border-radius: 4px;
     cursor: pointer;
     display: none;
 }
-
-.correct {
+ 
+.correct{
     background: #9aeabc;
 }
-
-.incorrect {
+.incorrect{
     background: #ff9393;
 }
+ 
